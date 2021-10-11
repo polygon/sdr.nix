@@ -24,6 +24,19 @@
           board = "JAWBREAKER";
         };
         packages.libopencm3 = pkgs.callPackage ./libopencm3.nix {};
+        packages.sigutils = pkgs.callPackage ./sigutils.nix {};
+        packages.suscan = pkgs.callPackage ./suscan.nix {
+          sigutils = self.packages.${system}.sigutils;
+        };
+        packages.suwidgets = pkgs.libsForQt5.callPackage ./suwidgets.nix {
+          sigutils = self.packages.${system}.sigutils;
+        };
+        packages.sigdigger = pkgs.libsForQt5.callPackage ./sigdigger.nix {
+          sigutils = self.packages.${system}.sigutils;
+          suscan = self.packages.${system}.suscan;
+          suwidgets = self.packages.${system}.suwidgets;
+        };
+
       }
     );
 }
