@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "suscan";
-  version = "09fd8cf1f220ae707a877107163515114d9eb671";
+  version = "2022-01-04";
 
   src = fetchFromGitHub {
     owner = "BatchDrake";
     repo = "suscan";
-    rev = "${version}";
-    sha256 = "sha256-KU3JaGIL65LWJWc6Iw/eyKdUMnVQ85g0MtmuSPGdp44=";
+    rev = "052302ba995a73ab6c05b97b2c8a57c57ed31edc";
+    sha256 = "1m6m1j4vgndg65xz7sjjg3dkksaj2cnn93xjnqqmaq4cq36ivga7";
   };
 
   nativeBuildInputs = [

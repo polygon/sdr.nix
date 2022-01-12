@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "suwidgets";
-  version = "c45b2af3b24115335bf993671198f419fa3ed0f7";
+  version = "2022-01-09";
 
   src = fetchFromGitHub {
     owner = "BatchDrake";
     repo = "SuWidgets";
-    rev = "${version}";
-    sha256 = "sha256-p+kgmtDWuBLlh8IJP5FeximeJSfz9M6Il3SRYz0TJgI=";
+    rev = "eff320056984a979079b8c4d98db762b7f524557";
+    sha256 = "1ag58xy7z9m59g773j767bb9d40y0pf547ws7xgid2rmhkifnpbd";
   };
 
   dontWrapQtApps = true;
