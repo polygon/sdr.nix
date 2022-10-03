@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "sigdigger";
-  version = "2022-01-11";
+  version = "0.3.0";
 
   src = fetchFromGitHub {
     owner = "BatchDrake";
     repo = "SigDigger";
-    rev = "0a0576f05a2e3a21aaf3f0e1b6bcdb23d7cbc510";
-    sha256 = "0d1r9awp9jr1d7p1l9dg6hsqp9kw9vhrkyyvp09qipwakqac7vis";
+    rev = "v0.3.0";
+    sha256 = "sha256-dS+Fc0iQz7GIlGaR556Ur/EQh3Uzhqm9uBW42IuEqoE=";
   };
 
   nativeBuildInputs = [

@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "suwidgets";
-  version = "2022-01-09";
+  version = "2022-04-03";
 
   src = fetchFromGitHub {
     owner = "BatchDrake";
     repo = "SuWidgets";
-    rev = "eff320056984a979079b8c4d98db762b7f524557";
-    sha256 = "1ag58xy7z9m59g773j767bb9d40y0pf547ws7xgid2rmhkifnpbd";
+    rev = "826b3eeae5b682dc063f53b427caa9c7c48131ea";
+    sha256 = "sha256-cyFLsP+8GbALdlgEnVX4201Qq/KAxb/Vv+sJqbFpvUk=";
   };
 
   dontWrapQtApps = true;
@@ -26,6 +26,7 @@ stdenv.mkDerivation rec {
 
   preConfigure = ''
     sed -i 's/PKGCONFIG += sigutils fftw3/PKGCONFIG += sigutils fftw3f/' SuWidgets.pri
+    sed -i 's/util\/compat-/sys\//' WaveViewTree.cpp
   '';
 
   qmakeFlags = [
