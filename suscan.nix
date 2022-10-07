@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "suscan";
-  version = "2022-01-04";
+  version = "2022-07-05";
 
   src = fetchFromGitHub {
     owner = "BatchDrake";
     repo = "suscan";
-    rev = "052302ba995a73ab6c05b97b2c8a57c57ed31edc";
-    sha256 = "1m6m1j4vgndg65xz7sjjg3dkksaj2cnn93xjnqqmaq4cq36ivga7";
+    rev = "37dad542b97aff24654f0bb80fb8e85af7cb84ab";
+    sha256 = "sha256-h1ogtYjkqiHb1/NAJfJ0HQIvGnZM2K/PSP5nqLXUf9M=";
   };
 
   nativeBuildInputs = [
@@ -26,9 +26,11 @@ stdenv.mkDerivation rec {
   ];
 
   preConfigure = ''
-    sed -i 's/fftw3 >= 3.0/fftw3f >= 3.0/' suscan.pc.in
+    sed -i 's/fftw3 >= 3.0/fftw3f >= 3.0/' suscan.pc.in;
   '';
 
+  patchPhase = ''
+  '';
   meta = with lib; {
     description = "Channel scanner based on sigutils library";
     homepage = "https://github.com/BatchDrake/suscan";

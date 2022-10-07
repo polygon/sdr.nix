@@ -7,8 +7,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "BatchDrake";
     repo = "sigutils";
-    rev = "982d4ce1818905b097ecdf406733c2ef099f7b35";
-    sha256 = "0073b07pzvp2h782rvpm12954l2ff1cc452z8pdspqd321sn8dl2";
+    rev = "1d7559d427aadd253dd825eef26bf15e54860c5f";
+    sha256 = "sha256-wvd6sixwGmR9R4x+swLVqXre4Dqnj10jZIXUfaJcmBw=";
   };
 
   nativeBuildInputs = [
@@ -21,6 +21,10 @@ stdenv.mkDerivation rec {
     libsndfile
     volk
   ];
+
+  preConfigure = ''
+    sed -i 's/util\/compat-/sys\//' sigutils/log.c
+  '';
 
   meta = with lib; {
     description = "Small signal processing utility library";
